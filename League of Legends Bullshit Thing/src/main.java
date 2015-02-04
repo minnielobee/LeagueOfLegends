@@ -17,12 +17,16 @@ public class main
         	Player.champBuilder();
         	System.out.println("");
         	Team.formTeamFromChampion();
+        	System.out.println("");
+        	Team.finalBuild();
         	}
         else if(Team.champOrRole.equalsIgnoreCase("role"))
         	{
         	Player.askForPreferredRole();
         	System.out.println("");
         	Player.roleBuilder();
+        	System.out.println("");
+        	Team.finalBuild();
         	}
         else
         	{

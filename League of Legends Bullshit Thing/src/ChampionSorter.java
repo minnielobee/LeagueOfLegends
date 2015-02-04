@@ -7,3 +7,4 @@ public class ChampionSorter implements Comparator<Champion>
 		return c1.getName().compareTo(c2.getName());
 		}
 	}
+ 

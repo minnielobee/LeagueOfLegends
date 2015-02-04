@@ -6,7 +6,7 @@ public class Player
 	public static String champ;
 	static int firstChamp;
 	static int firstRole;
-	
+	 
 	
 	public static String askForName()
 		{

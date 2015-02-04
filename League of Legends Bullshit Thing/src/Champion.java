@@ -178,7 +178,7 @@ static ArrayList<Champion> champs = new ArrayList<Champion>();
         Collections.sort(champs, new ChampionSorter());
         return champs;
         }
-    
+     
     public static ArrayList printChamp()
         {
         Scanner userInput = new Scanner(System.in);
