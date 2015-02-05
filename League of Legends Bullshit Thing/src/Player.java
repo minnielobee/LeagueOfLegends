@@ -102,7 +102,7 @@ public class Player
 				{
 				System.out.println("Great!");
 				}
-			else if (i == Champion.champs.size())
+			if (i == Champion.champs.size())
 				{
 				System.out.println("I think not");
 				pickChamp();

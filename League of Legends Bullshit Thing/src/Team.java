@@ -8,6 +8,8 @@ public class Team
 	private String duoBot;
 	static ArrayList teams = new ArrayList();
 	static String champOrRole;
+	static String [] reTeam = {" " , " " , " ", " " , " "};
+	
 	
 	public Team(String t, String j, String m, String s, String d)
 		{
@@ -71,13 +73,13 @@ public class Team
 	
 	public static ArrayList initiateTeam()
 		{
-		teams.add(new Team(" ." , " ." , " ." , " ." , " ."));
+		teams.add(new Team(" " , " " , " " , " " , " "));
 		return teams;
 		}
 	
 	public static ArrayList formTeamFromChampion()
 		{
-		System.out.println("Your champion's role is " + Champion.champs.get(Player.firstChamp).getType() + ".");
+		System.out.print("Your champion's role is " + Champion.champs.get(Player.firstChamp).getType() + ". ");
 		switch (Champion.champs.get(Player.firstChamp).getType())
 			{
 			case "Marksman":
@@ -100,7 +102,7 @@ public class Team
 				}
 			case "Fighter":
 				{
-				System.out.println("You could play anywhere, but you should play ");
+				System.out.print("You could play anywhere, but you should play ");
 				int fake = (int)(Math.random()*5)+1;
 				switch (fake)
 					{
@@ -161,7 +163,7 @@ public class Team
 	public static ArrayList finalBuild()
 		{
 		Collections.shuffle(Champion.champs);
-		if (((Team) teams.get(0)).getTop().equals(" ."))
+		if (((Team) teams.get(0)).getTop().equals(" "))
 			{
 			for (int i = 0; i < Champion.champs.size(); i++)
 				{
@@ -179,12 +181,11 @@ public class Team
 		            System.out.println("'W' Ability: " + ((Champion) Champion.champs.get(i)).getwAbil());
 		            System.out.println("'E' Ability: " + ((Champion) Champion.champs.get(i)).geteAbil());
 		            System.out.println("Ultimate: " + ((Champion) Champion.champs.get(i)).getUlt());
-		            break;
+		            System.out.println("");
 					}
-				break;
 				}
 			}
-		else if (((Team) teams.get(0)).getJungle().equals(" ."))
+		if (((Team) teams.get(0)).getJungle().equals(" "))
 			{
 			for (int i = 0; i < Champion.champs.size(); i++)
 				{
@@ -202,12 +203,11 @@ public class Team
 		            System.out.println("'W' Ability: " + ((Champion) Champion.champs.get(i)).getwAbil());
 		            System.out.println("'E' Ability: " + ((Champion) Champion.champs.get(i)).geteAbil());
 		            System.out.println("Ultimate: " + ((Champion) Champion.champs.get(i)).getUlt());
-		            break;
+		            System.out.println("");
 					}
-				break;
 				}
 			}
-		else if (((Team) teams.get(0)).getMid().equals(" ."))
+		if (((Team) teams.get(0)).getMid().equals(" "))
 			{
 			for (int i = 0; i < Champion.champs.size(); i++)
 				{
@@ -225,12 +225,11 @@ public class Team
 		            System.out.println("'W' Ability: " + ((Champion) Champion.champs.get(i)).getwAbil());
 		            System.out.println("'E' Ability: " + ((Champion) Champion.champs.get(i)).geteAbil());
 		            System.out.println("Ultimate: " + ((Champion) Champion.champs.get(i)).getUlt());
-		            break;
+		            System.out.println("");
 					}
-				break;
 				}
 			}
-		else if (((Team) teams.get(0)).getDuoBot().equals(" ."))
+		if (((Team) teams.get(0)).getDuoBot().equals(" "))
 			{
 			for (int i = 0; i < Champion.champs.size(); i++)
 				{
@@ -248,16 +247,15 @@ public class Team
 		            System.out.println("'W' Ability: " + ((Champion) Champion.champs.get(i)).getwAbil());
 		            System.out.println("'E' Ability: " + ((Champion) Champion.champs.get(i)).geteAbil());
 		            System.out.println("Ultimate: " + ((Champion) Champion.champs.get(i)).getUlt());
-		            break;
+		            System.out.println("");
 					}
-				break;
 				}
 			}
-		if (((Team) teams.get(0)).getSupport().equals(" ."))
+		if (((Team) teams.get(0)).getSupport().equals(" "))
 			{
 			for (int i = 0; i < Champion.champs.size(); i++)
 				{
-				if (Champion.champs.get(i).getType() == "Tank")
+				if (Champion.champs.get(i).getType() == "Support")
 					{
 					((Team) teams.get(0)).setSupport(Champion.champs.get(i).getName());
 					System.out.println("This is your support.");
@@ -271,13 +269,13 @@ public class Team
 		            System.out.println("'W' Ability: " + ((Champion) Champion.champs.get(i)).getwAbil());
 		            System.out.println("'E' Ability: " + ((Champion) Champion.champs.get(i)).geteAbil());
 		            System.out.println("Ultimate: " + ((Champion) Champion.champs.get(i)).getUlt());
-		            break;
+		            System.out.println("");
 					}
-				break;
 				}
 			}
 		return teams;
 		}
+
 	public static String champOrRole()
 		{
 		Scanner userInput = new Scanner(System.in);
