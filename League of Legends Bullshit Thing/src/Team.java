@@ -9,6 +9,7 @@ public class Team
 	static ArrayList teams = new ArrayList();
 	static String champOrRole;
 	static String [] reTeam = {" " , " " , " ", " " , " "};
+	static int teamNumber;
 	
 	
 	public Team(String t, String j, String m, String s, String d)
@@ -73,8 +74,15 @@ public class Team
 	
 	public static ArrayList initiateTeam()
 		{
-		teams.add(new Team(" " , " " , " " , " " , " "));
+		teams.add(new Team("Cho'Gath" , "Elise" , "Twisted Fate" , "Ezreal" , "Janna"));
+		teams.add(new Team("Amumu" , "Kassadin" , "Malzahar" , "Graves" , "Soraka"));
+		teams.add(new Team("Jarvan IV" , "Irelia" , "Fiddlesticks" , "Jinx" , "Kayle"));
 		return teams;
+		}
+	public static int ugh()
+		{
+		teamNumber = (int)(Math.random()*teams.size());
+		return teamNumber;
 		}
 	
 	public static ArrayList formTeamFromChampion()
@@ -84,19 +92,19 @@ public class Team
 			{
 			case "Marksman":
 				{
-				((Team) teams.get(0)).setDuoBot(Champion.champs.get(Player.firstChamp).getName());
+				((Team) teams.get(teamNumber)).setDuoBot(Champion.champs.get(Player.firstChamp).getName());
 				System.out.println("So you would troll duo bot lane.");
 				break;
 				}
 			case "Assassin":
 				{
-				((Team) teams.get(0)).setJungle(Champion.champs.get(Player.firstChamp).getName());
+				((Team) teams.get(teamNumber)).setJungle(Champion.champs.get(Player.firstChamp).getName());
 				System.out.println("So you would roam the jungle.");
 				break;
 				}
 			case "Support":
 				{
-				((Team) teams.get(0)).setSupport(Champion.champs.get(Player.firstChamp).getName());
+				((Team) teams.get(teamNumber)).setSupport(Champion.champs.get(Player.firstChamp).getName());
 				System.out.println("So you would support the team.");
 				break;
 				}
@@ -108,37 +116,37 @@ public class Team
 					{
 					case 1:
 						{
-						((Team) teams.get(0)).setTop(Champion.champs.get(Player.firstChamp).getName());
+						((Team) teams.get(teamNumber)).setTop(Champion.champs.get(Player.firstChamp).getName());
 						System.out.print("top lane.");
 						break;
 						}
 					case 2:
 						{
-						((Team) teams.get(0)).setJungle(Champion.champs.get(Player.firstChamp).getName());
+						((Team) teams.get(teamNumber)).setJungle(Champion.champs.get(Player.firstChamp).getName());
 						System.out.print("the jungle.");
 						break;
 						}
 					case 3:
 						{
-						((Team) teams.get(0)).setDuoBot(Champion.champs.get(Player.firstChamp).getName());
+						((Team) teams.get(teamNumber)).setDuoBot(Champion.champs.get(Player.firstChamp).getName());
 						System.out.print("adc.");
 						break;
 						}
 					case 4:
 						{
-						((Team) teams.get(0)).setMid(Champion.champs.get(Player.firstChamp).getName());
+						((Team) teams.get(teamNumber)).setMid(Champion.champs.get(Player.firstChamp).getName());
 						System.out.print("mid lane.");
 						break;
 						}
 					case 5:
 						{
-						((Team) teams.get(0)).setSupport(Champion.champs.get(Player.firstChamp).getName());
+						((Team) teams.get(teamNumber)).setSupport(Champion.champs.get(Player.firstChamp).getName());
 						System.out.print("support.");
 						break;
 						}
 					default:
 						{
-						((Team) teams.get(0)).setDuoBot(Champion.champs.get(Player.firstChamp).getName());
+						((Team) teams.get(teamNumber)).setDuoBot(Champion.champs.get(Player.firstChamp).getName());
 						System.out.println("adc.");
 						break;
 						}
@@ -147,13 +155,13 @@ public class Team
 				}
 			case "Tank":
 				{
-				((Team) teams.get(0)).setTop(Champion.champs.get(Player.firstChamp).getName());
+				((Team) teams.get(teamNumber)).setTop(Champion.champs.get(Player.firstChamp).getName());
 				System.out.println("So you would rule the top lane.");
 				break;
 				}
 			case "Mage":
 				{
-				((Team) teams.get(0)).setMid(Champion.champs.get(Player.firstChamp).getName());
+				((Team) teams.get(teamNumber)).setMid(Champion.champs.get(Player.firstChamp).getName());
 				System.out.println("So you would push the mid lane.");
 				break;
 				}
@@ -162,121 +170,23 @@ public class Team
 		}
 	public static ArrayList finalBuild()
 		{
-		Collections.shuffle(Champion.champs);
-		Collections.sort(Champion.champs , new TypeSorter());
-		if (((Team) teams.get(0)).getTop().equals(" "))
+		System.out.println("This is your team!");
+		for (int i = 0; i < Champion.champs.size(); i++)
 			{
-				for (int i = 0; i < Champion.champs.size(); i++)
-					{
-					if (Champion.champs.get(i).getType() == "Tank")
-						{
-						((Team) teams.get(0)).setTop(Champion.champs.get(i).getName());
-						System.out.println("This is your top laner.");
-						System.out.println("Champion name: " + ((Champion) Champion.champs.get(i)).getName() + ", " + ((Champion) Champion.champs.get(i)).getNickname());
-			            System.out.println("Primary Role: " +((Champion) Champion.champs.get(i)).getType());
-			            System.out.println("Secondary Role: " + ((Champion) Champion.champs.get(i)).getSecondType());
-			            System.out.println("Health: " + ((Champion) Champion.champs.get(i)).getHp());
-			            System.out.println("Mana: " + ((Champion) Champion.champs.get(i)).getMana());
-			            System.out.println("Passive: " + ((Champion) Champion.champs.get(i)).getPassive());
-			            System.out.println("'Q' Ability: " + ((Champion) Champion.champs.get(i)).getqAbil());
-			            System.out.println("'W' Ability: " + ((Champion) Champion.champs.get(i)).getwAbil());
-			            System.out.println("'E' Ability: " + ((Champion) Champion.champs.get(i)).geteAbil());
-			            System.out.println("Ultimate: " + ((Champion) Champion.champs.get(i)).getUlt());
-			            System.out.println("");
-						}
-					}
-			}
-		if (((Team) teams.get(0)).getJungle().equals(" "))
-			{
-				for (int i = 0; i < Champion.champs.size(); i++)
-					{
-					if (Champion.champs.get(i).getType() == "Assassin")
-						{
-						((Team) teams.get(0)).setJungle(Champion.champs.get(i).getName());
-						System.out.println("This is your jungler.");
-						System.out.println("Champion name: " + ((Champion) Champion.champs.get(i)).getName() + ", " + ((Champion) Champion.champs.get(i)).getNickname());
-			            System.out.println("Primary Role: " +((Champion) Champion.champs.get(i)).getType());
-			            System.out.println("Secondary Role: " + ((Champion) Champion.champs.get(i)).getSecondType());
-			            System.out.println("Health: " + ((Champion) Champion.champs.get(i)).getHp());
-			            System.out.println("Mana: " + ((Champion) Champion.champs.get(i)).getMana());
-			            System.out.println("Passive: " + ((Champion) Champion.champs.get(i)).getPassive());
-			            System.out.println("'Q' Ability: " + ((Champion) Champion.champs.get(i)).getqAbil());
-			            System.out.println("'W' Ability: " + ((Champion) Champion.champs.get(i)).getwAbil());
-			            System.out.println("'E' Ability: " + ((Champion) Champion.champs.get(i)).geteAbil());
-			            System.out.println("Ultimate: " + ((Champion) Champion.champs.get(i)).getUlt());
-			            System.out.println("");
-						}
-					}
-			}
-		if (((Team) teams.get(0)).getMid().equals(" "))
-			{
-			do
-				{
-				for (int i = 0; i < Champion.champs.size(); i++)
-					{
-					if (Champion.champs.get(i).getType() == "Mage")
-						{
-						((Team) teams.get(0)).setMid(Champion.champs.get(i).getName());
-						System.out.println("This is your top laner.");
-						System.out.println("Champion name: " + ((Champion) Champion.champs.get(i)).getName() + ", " + ((Champion) Champion.champs.get(i)).getNickname());
-			            System.out.println("Primary Role: " +((Champion) Champion.champs.get(i)).getType());
-			            System.out.println("Secondary Role: " + ((Champion) Champion.champs.get(i)).getSecondType());
-			            System.out.println("Health: " + ((Champion) Champion.champs.get(i)).getHp());
-			            System.out.println("Mana: " + ((Champion) Champion.champs.get(i)).getMana());
-			            System.out.println("Passive: " + ((Champion) Champion.champs.get(i)).getPassive());
-			            System.out.println("'Q' Ability: " + ((Champion) Champion.champs.get(i)).getqAbil());
-			            System.out.println("'W' Ability: " + ((Champion) Champion.champs.get(i)).getwAbil());
-			            System.out.println("'E' Ability: " + ((Champion) Champion.champs.get(i)).geteAbil());
-			            System.out.println("Ultimate: " + ((Champion) Champion.champs.get(i)).getUlt());
-			            System.out.println("");
-						}
-					}
+			if (((Team) teams.get(teamNumber)).getTop().equals(Champion.champs.get(i).getName()))
+				{			
+				System.out.println("Champion name: " + ((Champion) Champion.champs.get(i)).getName() + ", " + ((Champion) Champion.champs.get(i)).getNickname());
+		        System.out.println("Primary Role: " +((Champion) Champion.champs.get(i)).getType());
+		        System.out.println("Secondary Role: " + ((Champion) Champion.champs.get(i)).getSecondType());
+		        System.out.println("Health: " + ((Champion) Champion.champs.get(i)).getHp());
+		        System.out.println("Mana: " + ((Champion) Champion.champs.get(i)).getMana());
+		        System.out.println("Passive: " + ((Champion) Champion.champs.get(i)).getPassive());
+		        System.out.println("'Q' Ability: " + ((Champion) Champion.champs.get(i)).getqAbil());
+		        System.out.println("'W' Ability: " + ((Champion) Champion.champs.get(i)).getwAbil());
+		        System.out.println("'E' Ability: " + ((Champion) Champion.champs.get(i)).geteAbil());
+		        System.out.println("'R' Ability: " + ((Champion) Champion.champs.get(i)).getUlt());
+		        System.out.println("");
 				}
-			while (((Team) teams.get(0)).getMid().equals(" "));
-			}
-		if (((Team) teams.get(0)).getDuoBot().equals(" "))
-			{
-				for (int i = 0; i < Champion.champs.size(); i++)
-					{
-					if (Champion.champs.get(i).getType() == "Marksman")
-						{
-						((Team) teams.get(0)).setDuoBot(Champion.champs.get(i).getName());
-						System.out.println("This is your adc.");
-						System.out.println("Champion name: " + ((Champion) Champion.champs.get(i)).getName() + ", " + ((Champion) Champion.champs.get(i)).getNickname());
-			            System.out.println("Primary Role: " +((Champion) Champion.champs.get(i)).getType());
-			            System.out.println("Secondary Role: " + ((Champion) Champion.champs.get(i)).getSecondType());
-			            System.out.println("Health: " + ((Champion) Champion.champs.get(i)).getHp());
-			            System.out.println("Mana: " + ((Champion) Champion.champs.get(i)).getMana());
-			            System.out.println("Passive: " + ((Champion) Champion.champs.get(i)).getPassive());
-			            System.out.println("'Q' Ability: " + ((Champion) Champion.champs.get(i)).getqAbil());
-			            System.out.println("'W' Ability: " + ((Champion) Champion.champs.get(i)).getwAbil());
-			            System.out.println("'E' Ability: " + ((Champion) Champion.champs.get(i)).geteAbil());
-			            System.out.println("Ultimate: " + ((Champion) Champion.champs.get(i)).getUlt());
-			            System.out.println("");
-						}
-					}
-			}
-		if (((Team) teams.get(0)).getSupport().equals(" "))
-			{
-				for (int i = 0; i < Champion.champs.size(); i++)
-					{
-					if (Champion.champs.get(i).getType() == "Support")
-						{
-						((Team) teams.get(0)).setSupport(Champion.champs.get(i).getName());
-						System.out.println("This is your support.");
-						System.out.println("Champion name: " + ((Champion) Champion.champs.get(i)).getName() + ", " + ((Champion) Champion.champs.get(i)).getNickname());
-			            System.out.println("Primary Role: " +((Champion) Champion.champs.get(i)).getType());
-			            System.out.println("Secondary Role: " + ((Champion) Champion.champs.get(i)).getSecondType());
-			            System.out.println("Health: " + ((Champion) Champion.champs.get(i)).getHp());
-			            System.out.println("Mana: " + ((Champion) Champion.champs.get(i)).getMana());
-			            System.out.println("Passive: " + ((Champion) Champion.champs.get(i)).getPassive());
-			            System.out.println("'Q' Ability: " + ((Champion) Champion.champs.get(i)).getqAbil());
-			            System.out.println("'W' Ability: " + ((Champion) Champion.champs.get(i)).getwAbil());
-			            System.out.println("'E' Ability: " + ((Champion) Champion.champs.get(i)).geteAbil());
-			            System.out.println("Ultimate: " + ((Champion) Champion.champs.get(i)).getUlt());
-			            System.out.println("");
-						}
-					}
 			}
 		return teams;
 		}

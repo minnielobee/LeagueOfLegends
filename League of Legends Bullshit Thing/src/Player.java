@@ -112,6 +112,7 @@ public class Player
 		}
 	public static int champBuilder()
 		{
+		Collections.sort(Champion.champs , new ChampionSorter());
 		System.out.println("Okay, your champ is " + Player.champ + ". Here's their stats.");
 		for (int i = 0; i < Champion.champs.size(); i++)
 			{
@@ -156,7 +157,7 @@ public class Player
 				        System.out.println("'R' Ability: " + ((Champion) Champion.champs.get(i)).getUlt());
 				        System.out.println("");
 				        System.out.println("So you would troll duo bot lane.");
-				        ((Team) Team.teams.get(0)).setDuoBot(Champion.champs.get(i).getName());
+				        ((Team) Team.teams.get(Team.teamNumber)).setDuoBot(Champion.champs.get(i).getName());
 				        break;
 						}
 					}
@@ -180,7 +181,7 @@ public class Player
 				        System.out.println("'R' Ability: " + ((Champion) Champion.champs.get(i)).getUlt());
 				        System.out.println("");
 				        System.out.println("So you would roam the jungle.");
-				        ((Team) Team.teams.get(0)).setJungle(Champion.champs.get(i).getName());
+				        ((Team) Team.teams.get(Team.teamNumber)).setJungle(Champion.champs.get(i).getName());
 				        break;
 						}
 					}
@@ -204,7 +205,7 @@ public class Player
 				        System.out.println("'R' Ability: " + ((Champion) Champion.champs.get(i)).getUlt());
 				        System.out.println("");
 				        System.out.println("So you would support the team.");
-				        ((Team) Team.teams.get(0)).setSupport(Champion.champs.get(i).getName());
+				        ((Team) Team.teams.get(Team.teamNumber)).setSupport(Champion.champs.get(i).getName());
 				        break;
 						}
 					}
@@ -232,37 +233,37 @@ public class Player
 							{
 							case "Tank":
 								{
-								((Team) Team.teams.get(0)).setTop(Champion.champs.get(i).getName());
+								((Team) Team.teams.get(Team.teamNumber)).setTop(Champion.champs.get(i).getName());
 								System.out.print("top lane.");
 								break;
 								}
 							case "Jungle":
 								{
-								((Team) Team.teams.get(0)).setJungle(Champion.champs.get(i).getName());
+								((Team) Team.teams.get(Team.teamNumber)).setJungle(Champion.champs.get(i).getName());
 								System.out.print("the jungle.");
 								break;
 								}
 							case "Marksman":
 								{
-								((Team) Team.teams.get(0)).setDuoBot(Champion.champs.get(i).getName());
+								((Team) Team.teams.get(Team.teamNumber)).setDuoBot(Champion.champs.get(i).getName());
 								System.out.print("adc.");
 								break;
 								}
 							case "Mage":
 								{
-								((Team) Team.teams.get(0)).setMid(Champion.champs.get(i).getName());
+								((Team) Team.teams.get(Team.teamNumber)).setMid(Champion.champs.get(i).getName());
 								System.out.print("mid lane.");
 								break;
 								}
 							case "Support":
 								{
-								((Team) Team.teams.get(0)).setSupport(Champion.champs.get(i).getName());
+								((Team) Team.teams.get(Team.teamNumber)).setSupport(Champion.champs.get(i).getName());
 								System.out.print("support.");
 								break;
 								}
 							default:
 								{
-								((Team) Team.teams.get(0)).setJungle(Champion.champs.get(i).getName());
+								((Team) Team.teams.get(Team.teamNumber)).setJungle(Champion.champs.get(i).getName());
 								System.out.print("the jungle.");
 								break;
 								}
@@ -291,7 +292,7 @@ public class Player
 				        System.out.println("'R' Ability: " + ((Champion) Champion.champs.get(i)).getUlt());
 				        System.out.println("");
 				        System.out.println("So you would rule the top lane.");
-				        ((Team) Team.teams.get(0)).setTop(Champion.champs.get(i).getName());
+				        ((Team) Team.teams.get(Team.teamNumber)).setTop(Champion.champs.get(i).getName());
 				        break;
 						}
 					}
@@ -315,7 +316,7 @@ public class Player
 				        System.out.println("'R' Ability: " + ((Champion) Champion.champs.get(i)).getUlt());
 				        System.out.println("");
 				        System.out.println("So you would push the mid lane.");
-				        ((Team) Team.teams.get(0)).setMid(Champion.champs.get(i).getName());
+				        ((Team) Team.teams.get(Team.teamNumber)).setMid(Champion.champs.get(i).getName());
 				        break;
 						}
 					}

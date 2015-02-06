@@ -6,6 +6,7 @@ public class main
         {
         Champion.makeChamps();
         Team.initiateTeam();
+        Team.ugh();
         Player.askForName();
         Player.greetUser();
         System.out.println("");

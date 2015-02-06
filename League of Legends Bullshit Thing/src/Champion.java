@@ -187,6 +187,7 @@ static ArrayList<Champion> champs = new ArrayList<Champion>();
         champs.add(new Champion("Kha'Zix" , "Assassin" , "Void Assault OR Evolved Active Camouflage" , 2018 , "Fighter" , 1007 , "Unseen Threat" , "Taste Their Fear OR Evolved Enlarged Claws" , "Void Spike OR Evolved Spike Racks" , "Leap OR Evolved Wings" , "The Voidreaver" , "p.jpg"));
         champs.add(new Champion("Kog'Maw" , "Marksman" , "Living Artillery" , 2025 , "Mage" , 1002 , "Icathian Surprise" , "Caustic Spittle" , "Bio-Arcane Barrage" , "Void Ooze" , "The Mouth of the Abyss" , "p.jpg"));
         champs.add(new Champion("Twisted Fate" , "Mage" , "Destiny AND Gate" , 1916 , "" , 912 , "Loaded Dice" , "Wild Cards" , "Pick A Card" , "Stacked Deck" , "The Card Master" , "p.jpg"));
+        champs.add(new Champion("Soraka" , "Support" , "Wish" , 1933 , "" , 1431 , "Salvation" , "Starcall" , "Astral Infusion" , "Equinox" , "The Starchild" , "p.jpg"));
         Collections.sort(champs, new ChampionSorter());
         return champs;
         }
