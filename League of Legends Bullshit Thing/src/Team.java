@@ -188,6 +188,74 @@ public class Team
 		        System.out.println("");
 				}
 			}
+		for (int i = 0; i < Champion.champs.size(); i++)
+			{
+			if (((Team) teams.get(teamNumber)).getJungle().equals(Champion.champs.get(i).getName()))
+				{			
+				System.out.println("Champion name: " + ((Champion) Champion.champs.get(i)).getName() + ", " + ((Champion) Champion.champs.get(i)).getNickname());
+		        System.out.println("Primary Role: " +((Champion) Champion.champs.get(i)).getType());
+		        System.out.println("Secondary Role: " + ((Champion) Champion.champs.get(i)).getSecondType());
+		        System.out.println("Health: " + ((Champion) Champion.champs.get(i)).getHp());
+		        System.out.println("Mana: " + ((Champion) Champion.champs.get(i)).getMana());
+		        System.out.println("Passive: " + ((Champion) Champion.champs.get(i)).getPassive());
+		        System.out.println("'Q' Ability: " + ((Champion) Champion.champs.get(i)).getqAbil());
+		        System.out.println("'W' Ability: " + ((Champion) Champion.champs.get(i)).getwAbil());
+		        System.out.println("'E' Ability: " + ((Champion) Champion.champs.get(i)).geteAbil());
+		        System.out.println("'R' Ability: " + ((Champion) Champion.champs.get(i)).getUlt());
+		        System.out.println("");
+				}
+			}
+		for (int i = 0; i < Champion.champs.size(); i++)
+			{
+			if (((Team) teams.get(teamNumber)).getMid().equals(Champion.champs.get(i).getName()))
+				{			
+				System.out.println("Champion name: " + ((Champion) Champion.champs.get(i)).getName() + ", " + ((Champion) Champion.champs.get(i)).getNickname());
+		        System.out.println("Primary Role: " +((Champion) Champion.champs.get(i)).getType());
+		        System.out.println("Secondary Role: " + ((Champion) Champion.champs.get(i)).getSecondType());
+		        System.out.println("Health: " + ((Champion) Champion.champs.get(i)).getHp());
+		        System.out.println("Mana: " + ((Champion) Champion.champs.get(i)).getMana());
+		        System.out.println("Passive: " + ((Champion) Champion.champs.get(i)).getPassive());
+		        System.out.println("'Q' Ability: " + ((Champion) Champion.champs.get(i)).getqAbil());
+		        System.out.println("'W' Ability: " + ((Champion) Champion.champs.get(i)).getwAbil());
+		        System.out.println("'E' Ability: " + ((Champion) Champion.champs.get(i)).geteAbil());
+		        System.out.println("'R' Ability: " + ((Champion) Champion.champs.get(i)).getUlt());
+		        System.out.println("");
+				}
+			}
+		for (int i = 0; i < Champion.champs.size(); i++)
+			{
+			if (((Team) teams.get(teamNumber)).getDuoBot().equals(Champion.champs.get(i).getName()))
+				{			
+				System.out.println("Champion name: " + ((Champion) Champion.champs.get(i)).getName() + ", " + ((Champion) Champion.champs.get(i)).getNickname());
+		        System.out.println("Primary Role: " +((Champion) Champion.champs.get(i)).getType());
+		        System.out.println("Secondary Role: " + ((Champion) Champion.champs.get(i)).getSecondType());
+		        System.out.println("Health: " + ((Champion) Champion.champs.get(i)).getHp());
+		        System.out.println("Mana: " + ((Champion) Champion.champs.get(i)).getMana());
+		        System.out.println("Passive: " + ((Champion) Champion.champs.get(i)).getPassive());
+		        System.out.println("'Q' Ability: " + ((Champion) Champion.champs.get(i)).getqAbil());
+		        System.out.println("'W' Ability: " + ((Champion) Champion.champs.get(i)).getwAbil());
+		        System.out.println("'E' Ability: " + ((Champion) Champion.champs.get(i)).geteAbil());
+		        System.out.println("'R' Ability: " + ((Champion) Champion.champs.get(i)).getUlt());
+		        System.out.println("");
+				}
+			}
+		for (int i = 0; i < Champion.champs.size(); i++)
+			{
+			if (((Team) teams.get(teamNumber)).getSupport().equals(Champion.champs.get(i).getName()))
+				{			
+				System.out.println("Champion name: " + ((Champion) Champion.champs.get(i)).getName() + ", " + ((Champion) Champion.champs.get(i)).getNickname());
+		        System.out.println("Primary Role: " +((Champion) Champion.champs.get(i)).getType());
+		        System.out.println("Secondary Role: " + ((Champion) Champion.champs.get(i)).getSecondType());
+		        System.out.println("Health: " + ((Champion) Champion.champs.get(i)).getHp());
+		        System.out.println("Mana: " + ((Champion) Champion.champs.get(i)).getMana());
+		        System.out.println("Passive: " + ((Champion) Champion.champs.get(i)).getPassive());
+		        System.out.println("'Q' Ability: " + ((Champion) Champion.champs.get(i)).getqAbil());
+		        System.out.println("'W' Ability: " + ((Champion) Champion.champs.get(i)).getwAbil());
+		        System.out.println("'E' Ability: " + ((Champion) Champion.champs.get(i)).geteAbil());
+		        System.out.println("'R' Ability: " + ((Champion) Champion.champs.get(i)).getUlt());
+		        System.out.println("");
+				}
+			}
 		return teams;
 		}
 
