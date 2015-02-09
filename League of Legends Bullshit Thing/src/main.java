@@ -10,8 +10,8 @@ public class main
         Player.greetUser();
         OptionsWithJPanel.askForUsernameAndGreet();
         System.out.println("");
-        Team.champOrRole();
-        if (Team.champOrRole.equalsIgnoreCase("champion"))
+        OptionsWithJPanel.champOrRole();
+        if (OptionsWithJPanel.champOrRole == 0)
         	{
         	Player.pickChamp();
         	System.out.println();
@@ -21,18 +21,13 @@ public class main
         	System.out.println("");
         	Team.finalBuild();
         	}
-        else if(Team.champOrRole.equalsIgnoreCase("role"))
+        else if(OptionsWithJPanel.champOrRole == 1)
         	{
         	Player.askForPreferredRole();
         	System.out.println("");
         	Player.roleBuilder();
         	System.out.println("");
         	Team.finalBuild();
-        	}
-        else
-        	{
-        	System.out.println("Don't know how to " + Team.champOrRole + ".");
-        	Team.champOrRole();
         	}
         }
 
