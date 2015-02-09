@@ -77,6 +77,7 @@ public class Team
 		teams.add(new Team("Cho'Gath" , "Elise" , "Twisted Fate" , "Ezreal" , "Janna"));
 		teams.add(new Team("Amumu" , "Kassadin" , "Malzahar" , "Graves" , "Soraka"));
 		teams.add(new Team("Jarvan IV" , "Irelia" , "Fiddlesticks" , "Jinx" , "Kayle"));
+		teams.add(new Team("Blitzcrank" , "Evelynn" , "Vel'Koz" , "Kalista" , "Braum"));
 		return teams;
 		}
 	public static int ugh()

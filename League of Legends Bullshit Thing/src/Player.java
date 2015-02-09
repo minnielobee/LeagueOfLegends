@@ -6,6 +6,7 @@ public class Player
 	public static String champ;
 	static int firstChamp;
 	static int firstRole;
+	static ArrayList greetings = new ArrayList();
 	 
 	
 	public static String askForName()
@@ -17,7 +18,6 @@ public class Player
 		}
 	public static void greetUser()
 		{
-		ArrayList greetings = new ArrayList();
 		greetings.add("You're cool man");
 		greetings.add("You should play promotionals.");
 		greetings.add("Are you a diamond smurf?");
