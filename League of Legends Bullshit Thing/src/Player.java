@@ -24,8 +24,6 @@ public class Player
 		greetings.add("You could play for TSM");
 		greetings.add("You could be a caster");
 		greetings.add("I love you.");
-		int random = (int)(Math.random()*greetings.size());
-		System.out.println(greetings.get(random));
 		}
 	public static String askForPreferredRole()
 		{

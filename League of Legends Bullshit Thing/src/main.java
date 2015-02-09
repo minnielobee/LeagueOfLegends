@@ -7,8 +7,8 @@ public class main
         Champion.makeChamps();
         Team.initiateTeam();
         Team.ugh();
-        Player.askForName();
         Player.greetUser();
+        OptionsWithJPanel.askForUsernameAndGreet();
         System.out.println("");
         Team.champOrRole();
         if (Team.champOrRole.equalsIgnoreCase("champion"))
