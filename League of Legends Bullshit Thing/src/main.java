@@ -13,7 +13,7 @@ public class main
         OptionsWithJPanel.champOrRole();
         if (OptionsWithJPanel.champOrRole == 0)
         	{
-        	Player.pickChamp();
+        	OptionsWithJPanel.pickChamp();
         	System.out.println();
         	Player.champBuilder();
         	System.out.println("");

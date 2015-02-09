@@ -1,6 +1,6 @@
 import javax.swing.*;
 
-public class Picture extends Canvas
+public class Picture
 	{
 
 	JFrame champs = new JFrame();

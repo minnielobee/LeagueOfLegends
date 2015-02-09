@@ -33,10 +33,12 @@ public class OptionsWithJPanel extends JFrame
 			{
 			champions.add(Champion.champs.get(i).getName());
 			}
-		JComboBox chooseChampion = new JComboBox((ComboBoxModel) champions);
+		JComboBox chooseChampion = new JComboBox(champions.toArray());
 		JPanel panel = new JPanel();
 		JButton button = new JButton("This one!");
 		JLabel label = new JLabel("Pick a Champion!");
+		
+		
 		}
 	
 	}
