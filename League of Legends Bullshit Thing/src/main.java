@@ -14,7 +14,6 @@ public class main
         if (OptionsWithJPanel.champOrRole == 0)
         	{
         	OptionsWithJPanel.pickChamp();
-        	System.out.println();
         	Player.champBuilder();
         	System.out.println("");
         	Team.formTeamFromChampion();
@@ -23,6 +22,7 @@ public class main
         	}
         else if(OptionsWithJPanel.champOrRole == 1)
         	{
+        	OptionsWithJPanel.pickRole();
         	Player.askForPreferredRole();
         	System.out.println("");
         	Player.roleBuilder();

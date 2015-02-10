@@ -11,7 +11,7 @@ public class OptionsWithJPanel extends JFrame
 	static String name;
 	static int champOrRole;
 	static int role;
-	static String champion;
+	static int champion;
 	
 	public static void askForUsernameAndGreet()
 		{
@@ -28,28 +28,22 @@ public class OptionsWithJPanel extends JFrame
 		}
 	public static void pickChamp()
 		{
+		frame.setPreferredSize(new Dimension(800 , 800));
+		frame.setResizable(true);
 		ArrayList champions = new ArrayList();
 		for (int i = 0; i < Champion.champs.size(); i++)
 			{
 			champions.add(Champion.champs.get(i).getName());
 			}
-		JComboBox chooseChampion = new JComboBox(champions.toArray());
-		JPanel panel = new JPanel();
-		JButton button = new JButton("This one!");
-		JLabel label = new JLabel("Pick a Champion!");
-		panel.add(label);
-		panel.add(chooseChampion);
-		frame.add(panel);
-		frame.setSize(200 , 200);
-		frame.setLocationRelativeTo(null);
-		frame.setVisible(true);
-		button.addActionListener(new ActionListener()
-			{
-			public void actionPerformed(ActionEvent arg0)
-				{
-				Player.setChamp()
-				}
-			});
+		Object [] champions2 = (Object[]) champions.toArray();
+		champion = JOptionPane.showOptionDialog(frame , "Which champion is your favorite to play?" , "Pick a Champion!" , JOptionPane.YES_NO_CANCEL_OPTION , JOptionPane.QUESTION_MESSAGE , null , champions2 , champions2[0]);
+		Player.firstChamp = champion;
+		}
+	public static void pickRole()
+		{
+		Object [] roles = {"Marksman" , "Assassin" , "Support" , "Fighter" , "Tank" , "Mage"};
+		role = JOptionPane.showOptionDialog(frame , "Which role do you play best?" , "Pick a Role!" , JOptionPane.YES_NO_CANCEL_OPTION , JOptionPane.QUESTION_MESSAGE , null, roles , roles[0]);
+		Player.firstRole = role + 1;
 		}
 	
 	}

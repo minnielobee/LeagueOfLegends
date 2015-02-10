@@ -27,21 +27,7 @@ public class Player
 		}
 	public static String askForPreferredRole()
 		{
-		Scanner userInput = new Scanner(System.in);
-		System.out.println("What role do you prefer?");
-		System.out.println(" 1) Marksman");
-		System.out.println(" 2) Assassin");
-		System.out.println(" 3) Support");
-		System.out.println(" 4) Fighter");
-		System.out.println(" 5) Tank");
-		System.out.println(" 6) Mage");
-		if (!userInput.hasNextInt())
-			{
-			System.out.println("*insert snark here*");
-			askForPreferredRole();
-			}
-		int roleChoice = userInput.nextInt();
-		switch (roleChoice)
+		switch (firstRole)
 			{
 			case 1:
 				{
@@ -111,29 +97,17 @@ public class Player
 	public static int champBuilder()
 		{
 		Collections.sort(Champion.champs , new ChampionSorter());
-		System.out.println("Okay, your champ is " + Player.champ + ". Here's their stats.");
-		for (int i = 0; i < Champion.champs.size(); i++)
-			{
-			if (Player.champ.equals(Champion.champs.get(i).getName()))
-				{
-				firstChamp = i;
-				System.out.println("Champion name: " + ((Champion) Champion.champs.get(firstChamp)).getName() + ", " + ((Champion) Champion.champs.get(firstChamp)).getNickname());
-		        System.out.println("Primary Role: " +((Champion) Champion.champs.get(firstChamp)).getType());
-		        System.out.println("Secondary Role: " + ((Champion) Champion.champs.get(firstChamp)).getSecondType());
-		        System.out.println("Health: " + ((Champion) Champion.champs.get(firstChamp)).getHp());
-		        System.out.println("Mana: " + ((Champion) Champion.champs.get(firstChamp)).getMana());
-		        System.out.println("Passive: " + ((Champion) Champion.champs.get(firstChamp)).getPassive());
-		        System.out.println("'Q' Ability: " + ((Champion) Champion.champs.get(firstChamp)).getqAbil());
-		        System.out.println("'W' Ability: " + ((Champion) Champion.champs.get(firstChamp)).getwAbil());
-		        System.out.println("'E' Ability: " + ((Champion) Champion.champs.get(firstChamp)).geteAbil());
-		        System.out.println("'R' Ability: " + ((Champion) Champion.champs.get(firstChamp)).getUlt());
-				}
-			}
+		System.out.println("Champion name: " + ((Champion) Champion.champs.get(firstChamp)).getName() + ", " + ((Champion) Champion.champs.get(firstChamp)).getNickname());
+        System.out.println("Primary Role: " +((Champion) Champion.champs.get(firstChamp)).getType());
+		System.out.println("Secondary Role: " + ((Champion) Champion.champs.get(firstChamp)).getSecondType());
+		System.out.println("Health: " + ((Champion) Champion.champs.get(firstChamp)).getHp());
+		System.out.println("Mana: " + ((Champion) Champion.champs.get(firstChamp)).getMana());
+		System.out.println("Passive: " + ((Champion) Champion.champs.get(firstChamp)).getPassive());
+		System.out.println("'Q' Ability: " + ((Champion) Champion.champs.get(firstChamp)).getqAbil());
+		System.out.println("'W' Ability: " + ((Champion) Champion.champs.get(firstChamp)).getwAbil());
+		System.out.println("'E' Ability: " + ((Champion) Champion.champs.get(firstChamp)).geteAbil());
+		System.out.println("'R' Ability: " + ((Champion) Champion.champs.get(firstChamp)).getUlt());
 		return firstChamp;
-		}
-	public static void setChamp(String ch)
-		{
-		ch = 
 		}
 	public static int roleBuilder()
 		{
