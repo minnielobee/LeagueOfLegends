@@ -131,6 +131,10 @@ public class Player
 			}
 		return firstChamp;
 		}
+	public static void setChamp(String ch)
+		{
+		ch = 
+		}
 	public static int roleBuilder()
 		{
 		System.out.println("Here's a champion based on your role choice.");

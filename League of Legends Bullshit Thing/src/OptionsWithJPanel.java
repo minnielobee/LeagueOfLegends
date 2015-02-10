@@ -37,8 +37,19 @@ public class OptionsWithJPanel extends JFrame
 		JPanel panel = new JPanel();
 		JButton button = new JButton("This one!");
 		JLabel label = new JLabel("Pick a Champion!");
-		
-		
+		panel.add(label);
+		panel.add(chooseChampion);
+		frame.add(panel);
+		frame.setSize(200 , 200);
+		frame.setLocationRelativeTo(null);
+		frame.setVisible(true);
+		button.addActionListener(new ActionListener()
+			{
+			public void actionPerformed(ActionEvent arg0)
+				{
+				Player.setChamp()
+				}
+			});
 		}
 	
 	}
