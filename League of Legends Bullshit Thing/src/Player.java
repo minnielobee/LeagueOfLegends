@@ -96,6 +96,14 @@ public class Player
 		}
 	public static int champBuilder()
 		{
+		try
+			{
+			Thread.sleep(1500);
+			} catch (InterruptedException e)
+			{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			}
 		Collections.sort(Champion.champs , new ChampionSorter());
 		System.out.println("Champion name: " + ((Champion) Champion.champs.get(firstChamp)).getName() + ", " + ((Champion) Champion.champs.get(firstChamp)).getNickname());
         System.out.println("Primary Role: " +((Champion) Champion.champs.get(firstChamp)).getType());

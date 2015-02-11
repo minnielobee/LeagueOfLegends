@@ -5,13 +5,21 @@ import javax.swing.*;
 
 import java.util.*;
 
-public class OptionsWithJPanel extends JFrame
+public class OptionsWithJPanel extends JFrame implements ActionListener
 	{
 	static JFrame frame = new JFrame();
 	static String name;
 	static int champOrRole;
 	static int role;
 	static int champion;
+	static final JComboBox pickChampion = new JComboBox();
+	
+	@Override
+	public void actionPerformed(ActionEvent e)
+		{
+		champion = (int) pickChampion.getSelectedIndex();
+		frame.dispose();
+		}
 	
 	public static void askForUsernameAndGreet()
 		{
@@ -26,18 +34,37 @@ public class OptionsWithJPanel extends JFrame
 		JOptionPane.showMessageDialog(frame , "Awesome!");
 		return champOrRole;
 		}
-	public static void pickChamp()
+	public static JComboBox pickChamp()
 		{
-		frame.setPreferredSize(new Dimension(800 , 800));
-		frame.setResizable(true);
 		ArrayList champions = new ArrayList();
 		for (int i = 0; i < Champion.champs.size(); i++)
 			{
 			champions.add(Champion.champs.get(i).getName());
 			}
 		Object [] champions2 = (Object[]) champions.toArray();
-		champion = JOptionPane.showOptionDialog(frame , "Which champion is your favorite to play?" , "Pick a Champion!" , JOptionPane.YES_NO_CANCEL_OPTION , JOptionPane.QUESTION_MESSAGE , null , champions2 , champions2[0]);
+		final JComboBox pickChampion = new JComboBox(champions2);
+		JPanel panel = new JPanel();
+		JButton button = new JButton("This one!");
+		JLabel label = new JLabel("Pick a champion!");
+		panel.add(label);
+		panel.add(pickChampion);
+		panel.add(button);
+		frame.add(panel);
+		frame.setSize(200 , 200);
+		frame.setLocationRelativeTo(null);
+		frame.setVisible(true);
+		button.addActionListener(new ActionListener()
+			{
+				@Override
+				public void actionPerformed(ActionEvent e)
+					{
+					champion = (int) pickChampion.getSelectedIndex();
+					frame.dispose();
+					}
+			}
+			);
 		Player.firstChamp = champion;
+		return pickChampion;
 		}
 	public static void pickRole()
 		{
