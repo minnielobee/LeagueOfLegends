@@ -45,7 +45,7 @@ public class OptionsWithJPanel extends JFrame implements ActionListener
 		final JComboBox pickChampion = new JComboBox(champions2);
 		JPanel panel = new JPanel();
 		JButton button = new JButton("This one!");
-		JLabel label = new JLabel("Pick a champion!");
+		JLabel label = new JLabel("Pick a Champion!");
 		panel.add(label);
 		panel.add(pickChampion);
 		panel.add(button);

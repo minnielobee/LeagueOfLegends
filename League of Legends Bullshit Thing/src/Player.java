@@ -18,11 +18,11 @@ public class Player
 		}
 	public static void greetUser()
 		{
-		greetings.add("You're cool man");
+		greetings.add("You're cool man.");
 		greetings.add("You should play promotionals.");
 		greetings.add("Are you a diamond smurf?");
-		greetings.add("You could play for TSM");
-		greetings.add("You could be a caster");
+		greetings.add("You could play for TSM.");
+		greetings.add("You could be a caster.");
 		greetings.add("I love you.");
 		}
 	public static String askForPreferredRole()
@@ -101,7 +101,6 @@ public class Player
 			Thread.sleep(1500);
 			} catch (InterruptedException e)
 			{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			}
 		Collections.sort(Champion.champs , new ChampionSorter());
